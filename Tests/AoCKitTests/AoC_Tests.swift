@@ -8,15 +8,39 @@ final class AoCTests: XCTestCase {
     static let expectedIlligalCharacter = "Expected illigal character"
 
     // MARK: - Day 1
-    let day1Input = """
+    let day1InputPart1 = """
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
 """
 
     func testDay1Part1() {
-        XCTAssertEqual(Day1(input: day1Input).part1(), 0)
+        XCTAssertEqual(Day1.getNumbers(from: "1abc2"), 12)
+        XCTAssertEqual(Day1.getNumbers(from: "pqr3stu8vwx"), 38)
+        XCTAssertEqual(Day1.getNumbers(from: "a1b2c3d4e5f"), 15)
+        XCTAssertEqual(Day1.getNumbers(from: "treb7uchet"), 77)
+        XCTAssertEqual(Day1(input: day1InputPart1).part1(), 142)
     }
+    let day1InputPart2 = """
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+"""
 
     func testDay1Part2() {
-        XCTAssertEqual(Day1(input: day1Input).part2(), 0)
+        XCTAssertEqual(Day1.getWordNumbers(from: "two1nine"), 29)
+        XCTAssertEqual(Day1.getWordNumbers(from: "eightwothree"), 83)
+        XCTAssertEqual(Day1.getWordNumbers(from: "abcone2threexyz"), 13)
+        XCTAssertEqual(Day1.getWordNumbers(from: "xtwone3four"), 24)
+        XCTAssertEqual(Day1.getWordNumbers(from: "4nineeightseven2"), 42)
+        XCTAssertEqual(Day1.getWordNumbers(from: "zoneight234"), 14)
+        XCTAssertEqual(Day1.getWordNumbers(from: "7pqrstsixteen"), 76)
+        XCTAssertEqual(Day1(input: day1InputPart2).part2(), 281)
     }
 
     // MARK: - Day 2
